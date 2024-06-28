@@ -9,20 +9,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    private Scanner sc;
-    public App(Scanner sc) {
-        this.sc = sc;
-    }
+
 
     public void run() {
         System.out.println("== motivation execution ==");
 
         SystemController systemController = new SystemController();
-        MotivationController motivationController = new MotivationController(sc);
+        MotivationController motivationController = new MotivationController();
 
         while (true) {
             System.out.print("command) ");
-            String cmd = sc.nextLine().trim();
+            String cmd = Container.getScanner().nextLine().trim();
 
             if (cmd.equals("exit")) {
                 systemController.exit();
