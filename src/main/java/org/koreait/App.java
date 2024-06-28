@@ -1,5 +1,7 @@
 package org.koreait;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -11,7 +13,8 @@ public class App {
 
     public void run() {
         System.out.println(" == motivation 실행 ==");
-        int lastId = 1;
+        int lastId = 0;
+        List<Motivation> motivations = new ArrayList<>();
 
 
         while (true) {
@@ -24,13 +27,16 @@ public class App {
             } else if (cmd.length() == 0) {
                 System.out.println("다시 입력");
                 continue;
-            } else if (cmd.equals("add")) {
-                System.out.print("motivation: ");
-                String motivation = sc.nextLine();
+            }
+            if (cmd.equals("add")) {
+                int id = lastId + 1;
+                System.out.print("body : ");
+                String body = sc.nextLine();
                 System.out.print("source: ");
                 String source = sc.nextLine();
-                System.out.printf("%d번 motivation이 등록 되었습니다.\n", lastId);
-                lastId++;
+
+                Motivation motivation = new Motivation(id, body, source);
+                System.out.printf("%d번 motivation이 등록 되었습니다\n", id);
             } else if (cmd.equals("list")) {
                 System.out.println("== motivation list ==");
                 System.out.printf("  id   //   motivation   //  source   \n");
