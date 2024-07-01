@@ -21,7 +21,9 @@ public class App {
                 continue;
             }
             Rq rq = new Rq(cmd);
-
+            if (rq.getErrMsg().equals("오타 있음(id)")) {
+                continue;
+            }
             switch (rq.getActionMethod()) {
                 case "exit":
                     systemController.exit();
