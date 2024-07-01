@@ -16,20 +16,7 @@ public class MotivationController {
         motivations = new ArrayList<>();
     }
 
-    public void delete(String cmd) {
-        System.out.print("삭제할 번호 입력) ");
-        int number = Container.getScanner().nextInt();
 
-        if (motivations.size() > 0) {
-            motivations.remove(motivations);
-            System.out.printf("%d번 motivation이 삭제 되었습니다\n", lastId);
-
-
-
-        } else if (motivations.size() <= 0) {
-            System.out.println("등록된 motivation 없음");
-        }
-    }
 
     public void add() {
         int id = lastId + 1;
